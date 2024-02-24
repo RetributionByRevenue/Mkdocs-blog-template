@@ -1,0 +1,78 @@
+site_name: Mark's Blog
+
+site_url: https://blog.fgebhart.dev/
+repo_url: https://github.com/fgebhart/blog
+edit_uri: edit/main/docs/
+repo_name: fgebhart/blog
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: green grey
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Ubuntu
+  logo: assets/octopus.png
+  favicon: assets/octopus.png
+  features:
+    - navigation.sections   # Disable sections once blog posts number increases
+    - navigation.top
+    - header.autohide
+    - announce.dismiss
+
+plugins:
+  - search
+  - tags:
+      tags_file: tags.md
+
+  - blog:
+      blog_dir: .
+      post_url_date_format: yyyy
+      post_url_format: "{date}/{slug}"
+      archive_toc: true
+      archive_url_format: "{date}"
+      archive_name: Posts
+      categories_toc: true
+      categories_allowed:
+        - 3D-Printing
+        - Python
+        - Blogging
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - abbr
+  - footnotes
+  - pymdownx.details
+  - pymdownx.keys
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+extra:
+  analytics:
+    provider: google
+    property: G-QDM5VJQE7E
+  social:
+    - icon: fontawesome/solid/address-book
+      link: https://fgebhart.dev
+      name: My personal website
+    - icon: fontawesome/brands/github 
+      link: https://github.com/fgebhart
+      name: My github profile
+
+copyright: Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Mark Ruff
